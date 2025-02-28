@@ -30,7 +30,7 @@
   function AddAutoConfirm() {
     var ids = doc.querySelectorAll('[id]');
     Array.prototype.forEach.call(ids, function(el, i) {
-      if (el.id.startsWith("email-") && el.id.endsWith("-confirm")) {
+      if (el.id && el.id instanceof String && el.id.startsWith("email-") && el.id.endsWith("-confirm")) {
         var emailid = el.id.replace("-confirm", "");
         FillConfirm(emailid);
         var email = doc.getElementById(emailid);
