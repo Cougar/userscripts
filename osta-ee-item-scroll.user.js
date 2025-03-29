@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.osta.ee/*.html
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Cougar
 // @license     MIT
 // @homepageURL https://github.com/Cougar/userscripts
@@ -15,7 +15,9 @@
 "use strict";
 
 const article = document.querySelector('article[class="offer-details__section"]');
-if (article && window.scrollY == 0) {
-  console.log('Scroll page from top to item details');
-  document.querySelector('article[class="offer-details__section"]').scrollIntoView();
-}
+setTimeout(function() {
+  if (article && window.scrollY == 0) {
+    console.log('Scroll page from top to item details');
+    document.querySelector('article[class="offer-details__section"]').scrollIntoView();
+  }
+}, 200);
